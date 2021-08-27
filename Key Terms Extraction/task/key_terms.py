@@ -1,4 +1,4 @@
-from nltk import word_tokenize, WordNetLemmatizer
+from nltk import word_tokenize, WordNetLemmatizer, pos_tag
 from nltk.corpus import stopwords
 from lxml import etree
 from collections import Counter
@@ -15,13 +15,15 @@ def main():
 
             # Tokenize article text, then lemmatize words and remove stop-words and punctuation
             tokens = word_tokenize(article[1].text.lower())
-
             lemmatizer = WordNetLemmatizer()
             words = []
+
             for token in tokens:
                 word = lemmatizer.lemmatize(token)
                 if word not in stopwords.words('english') and word not in punctuation:
-                    words.append(word)
+                    # Only include words that are nouns
+                    if pos_tag([word])[0][1] == "NN":
+                        words.append(word)
 
             # Find and print five most common words in article text
             words.sort(reverse=True)
