@@ -11,15 +11,10 @@ def main():
             # Print article header
             print(article[0].text + ":")
 
-            # Create freq. dict. for tokens in the article text and find most common words
+            # Create freq. dict. for tokens in the article text and find the 5 most common tokens
             tokens = nltk.word_tokenize(article[1].text.lower())
             tokens.sort(reverse=True)
-            freq_dict = Counter(tokens)
-            common_words = freq_dict.most_common()[0:5]
-
-            for key, value in freq_dict.most_common()[5:]:
-                if value == common_words[4]:
-                    common_words.append((key, value))
+            common_words = Counter(tokens).most_common(5)
 
             print(" ".join([word[0] for word in common_words]) + "\n")
 
