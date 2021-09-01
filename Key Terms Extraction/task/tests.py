@@ -3,20 +3,21 @@ from hstest.test_case import TestCase
 from hstest.check_result import CheckResult
 from test.news import news_text
 
-answer = {'Brain Disconnects During Sleep:': ["sleep", "cortex", "consciousness", "tononi", "activity"],
-          'New Portuguese skull may be an early relative of Neandertals:': ["skull", "fossil", "europe", "year",
-                                                                            "trait"],
-          'Living by the coast could improve mental health:': ['health', 'mental', 'coast', 'research', 'living'],
-          'Did you knowingly commit a crime? Brain scans could tell:': ["brain", "study", "wa", "suitcase", "result"],
+answer = {'Brain Disconnects During Sleep:': ["sleep", "cortex", "consciousness", "tononi", "tm"],
+          'New Portuguese skull may be an early relative of Neandertals:': ["skull", "fossil", "europe", "trait",
+                                                                            "genus"],
+          'Living by the coast could improve mental health:': ["health", "coast", "mental", "living", "household"],
+          'Did you knowingly commit a crime? Brain scans could tell:': ["brain", "suitcase", "study", "security",
+                                                                        "scenario"],
           'Computer learns to detect skin cancer more accurately than doctors:': ["dermatologist", "skin", "melanoma",
-                                                                                  "year", "cnn"],
-          'US economic growth stronger than expected despite weak demand:': ["u", "quarter", "ha", "year", "rate"],
+                                                                                  "cnn", "lesion"],
+          'US economic growth stronger than expected despite weak demand:': ["rate", "growth", "quarter", "economy",
+                                                                             "investment"],
           'Microsoft becomes third listed US firm to be valued at $1tn:': ["microsoft", "share", "cloud", "market",
-                                                                           "ha"],
-          "Apple's Siri is a better rapper than you:": ["siri", "wa", "time", "rhyme", "ha"],
-          'Netflix viewers like comedy for breakfast and drama at lunch:': ["netflix", "show", "day", "comedy",
-                                                                            "viewer"],
-          'Loneliness May Make Quitting Smoking Even Tougher:': ["smoking", "loneliness", "study", "smoke", "quit"]}
+                                                                           "company"],
+          "Apple's Siri is a better rapper than you:": ["siri", "rhyme", "smooth", "rizzo", "producer"],
+          'Netflix viewers like comedy for breakfast and drama at lunch:': ["netflix", "day", "comedy", "viewer", "tv"],
+          'Loneliness May Make Quitting Smoking Even Tougher:': ["smoking", "loneliness", "smoke", "quit", "lead"]}
 
 
 class KTETest(StageTest):
@@ -49,11 +50,11 @@ class KTETest(StageTest):
         ans = list(answer.items())
         new = list(news.items())
         for i in range(len(ans)):
+            # лучше добавить ту же проверку, что и в первой стадии
             if len(answer) != len(news):
                 return CheckResult.wrong(
                     feedback="Something is wrong with output. Probably, you have forgotten to print some news? Try again")
-
-            if ans[i][1] != new[i][1]:
+            if set(ans[i][1]) != set(new[i][1]):
                 wrong_news.append(new[i][0])
             if ans[i][0] != new[i][0]:
                 wrong_head.append(new[i][0])
