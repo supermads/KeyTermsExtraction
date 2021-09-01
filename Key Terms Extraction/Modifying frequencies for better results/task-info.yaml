@@ -462,47 +462,8 @@ files:
         KTETest().run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/projects/166/stages/863/implement#comment
-status: Failed
+status: Solved
 feedback:
-  message: |-
-    Wrong answer in test #1
-
-    Keywords are found incorrectly in 9 of 10 news texts.
-    Keywords are found incorrectly in the following texts:
-
-    Brain Disconnects During Sleep:
-    New Portuguese skull may be an early relative of Neandertals:
-    Living by the coast could improve mental health:
-    Did you knowingly commit a crime? Brain scans could tell:
-    Computer learns to detect skin cancer more accurately than doctors:
-    US economic growth stronger than expected despite weak demand:
-    Apple's Siri is a better rapper than you:
-    Netflix viewers like comedy for breakfast and drama at lunch:
-    Loneliness May Make Quitting Smoking Even Tougher:
-
-    Please find below the output of your program during this failed test.
-
-    ---
-
-    Brain Disconnects During Sleep:
-    cortex sleep consciousness activity tononi
-    New Portuguese skull may be an early relative of Neandertals:
-    skull fossil europe year trait
-    Living by the coast could improve mental health:
-    health mental coast living le
-    Did you knowingly commit a crime? Brain scans could tell:
-    brain study result suitcase research
-    Computer learns to detect skin cancer more accurately than doctors:
-    dermatologist skin melanoma year cnn
-    US economic growth stronger than expected despite weak demand:
-    quarter year rate growth economy
-    Microsoft becomes third listed US firm to be valued at $1tn:
-    microsoft share cloud market company
-    Apple's Siri is a better rapper than you:
-    siri rhyme time rizzo mc
-    Netflix viewers like comedy for breakfast and drama at lunch:
-    netflix show day comedy schedule
-    Loneliness May Make Quitting Smoking Even Tougher:
-    smoking loneliness smoke study found
-  time: Wed, 01 Sep 2021 18:09:24 UTC
+  message: Congratulations!
+  time: Wed, 01 Sep 2021 20:36:10 UTC
 record: -1
